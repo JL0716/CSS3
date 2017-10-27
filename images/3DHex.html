@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 200px;
+            position: relative;
+            perspective: 800px;
+            margin: 20% auto 0;
+        }
+        
+        .hex {
+            width: 100%;
+            height: 100%;
+            position:absolute;
+            transform-style: preserve-3d;
+            /*transform: rotateY(45deg)rotateX(45deg)rotateZ(30deg);*/
+            animation: rot2 20s infinite;
+        }
+        
+        .hex div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 1;            /* .5 表透明度 */
+            /*backface-visibility: hidden*/
+        }
+        
+        .hex .plane:nth-of-type(1) {background-color: red;}
+        .hex .plane:nth-of-type(2) {background-color: orange;}
+        .hex .plane:nth-of-type(3) {background-color: yellow;}
+        .hex .plane:nth-of-type(4) {background-color: green;}
+        .hex .plane:nth-of-type(5) {background-color: blue;}
+        .hex .plane:nth-of-type(6) {background-color: purple;}
+        
+        .hex .plane:nth-of-type(1) {
+            transform: translateZ(300px);
+        }
+        .hex .plane:nth-of-type(2) {
+            transform: rotatey(60deg)translateZ(300px);
+        }
+        .hex .plane:nth-of-type(3) {
+            transform: rotateY(120deg)translateZ(300px);
+        }
+        .hex .plane:nth-of-type(4) {
+            transform: rotateY(180deg)translateZ(300px);
+        }
+        .hex .plane:nth-of-type(5) {
+            transform: rotateY(240deg)translateZ(300px);
+        }
+        .hex .plane:nth-of-type(6) {
+            transform: rotateY(300deg)translateZ(300px);
+        }
+        
+        @keyframes rot1 {
+            from {transform: rotateX(0deg);}
+            to {transform: rotateX(360deg);}
+        }
+        
+        @keyframes rot2 {
+            0% {transform: rotateY(0deg)}
+            8.3% {transform: rotateY(0deg)}
+            16.6% {transform: rotateY(60deg)}
+            24.9% {transform: rotateY(60deg)} 
+            33.2% {transform: rotateY(120deg)} 
+            41.5% {transform: rotateY(120deg)} 
+            49.8% {transform: rotateY(180deg)} 
+            58.1% {transform: rotateY(180deg)} 
+            66.4% {transform: rotateY(240deg)} 
+            74.7% {transform: rotateY(240deg)} 
+            83% {transform: rotateY(300deg)} 
+            91.3% {transform: rotateY(300deg)} 
+            100% {transform: rotateY(360deg)} 
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="hex">
+            <div class="plane"><img src="images/001.jpg" alt=""></div>
+            <div class="plane"><img src="images/002.jpg" alt=""></div>
+            <div class="plane"><img src="images/003.jpg" alt=""></div>
+            <div class="plane"><img src="images/004.jpg" alt=""></div>
+            <div class="plane"><img src="images/005.jpg" alt=""></div>
+            <div class="plane"><img src="images/006.jpg" alt=""></div>
+        </div>
+        
+    </div>
+</body>
+</html>
